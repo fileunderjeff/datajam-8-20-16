@@ -24,7 +24,7 @@ myshp_proj = spTransform(texas, CRS("+proj=longlat +datum=WGS84"))
 leaflet(myshp_proj) %>%
   addProviderTiles("CartoDB.Positron") %>% 
   setView(-99.9018, 31.9686, zoom = 5) %>%
-  addPolygons(weight=2, stroke=TRUE, opacity=0.3, popup = paste("<strong>COUNTY: </strong>",texas$NAME))
+  addPolygons(weight=2, stroke=TRUE, opacity=0.3, popup = paste("<strong>COUNTY: </strong>",myshp$NAME))
 #
 # combine two datasets: facts & results by county name
 facts$county <- gsub(" County", "", facts$area_name) # normalize county name
